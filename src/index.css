@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    background-color: rgb(42, 2, 2);
+    color: bisque;
+    width: 100vw;
+    overflow-x: hidden;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}

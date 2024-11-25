@@ -1,0 +1,45 @@
+import { useState } from "react"
+import { IKImage } from 'imagekitio-react';
+
+const Navbar = () => {
+    const [open, setOpen] = useState(false);
+  return (
+    <div className="w-full h-16 md:h-20 flex items=center justify-between">
+        {/*logo*/}
+        <div className="flex items-center gap-4 text-2xl font-bold">
+            <IKImage urlEndpoint={import.meta.env.VITE_IK_URL_ENDPOINT} path="/logo.png" className="w-8 h-8" alt="MooLog Logo" />
+            <span>MooLog</span>
+        </div>
+        {/*mobile menu*/}
+        <div className="md:hidden">
+            {/*mobile button*/}
+            <div className="cursor-pointer text-4xl"
+            onClick={() => setOpen((prev) => !prev)}>
+                {open ? "X" : "="}
+            </div>
+            {/*mobile list*/}
+            <div className={`w-full h-screen flex flex-col items-center justify-center gap-8 font-medium text-lg absolute top-16 transition-all ease-in-out ${open ? "-right-0" : "-right-[100%]"}`}>
+            <a href="/">Home</a>
+            <a href="/">Trending</a>
+            <a href="/">Most Popular</a>
+            <a href="/">About</a>
+            <a href="">
+                <button className="py-2 px-4 rounded-3xl bg-red-700 text-bisque">Login</button>
+            </a>
+            </div>
+        </div>
+        {/*desktop menu*/}
+        <div className="hidden md:flex items-center gap-8 xl:gap-12">
+            <a href="/">Home</a>
+            <a href="/">Trending</a>
+            <a href="/">Most Popular</a>
+            <a href="/">About</a>
+            <a href="">
+                <button className="py-2 px-4 rounded-3xl bg-red-700 text-bisque">Login</button>
+            </a>
+        </div>
+    </div>
+  )
+}
+
+export default Navbar
