@@ -9,3 +9,8 @@ body{
     overflow-x: hidden;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+
+.animatedButton{
+    animation-duration: 10000ms;
+  }
+  
