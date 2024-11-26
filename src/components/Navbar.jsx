@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { Link } from "react-router-dom";
-import Image from "./image";
+import Image from "./Image";
 import { SignedIn, SignedOut, UserButton } from "@clerk/clerk-react";
 
 const Navbar = () => {

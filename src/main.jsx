@@ -65,8 +65,7 @@ createRoot(document.getElementById('root')).render(
         layout: {
           socialButtonsPlacement: 'bottom'
         }
-      }}
-      
+      }} 
     >
       <RouterProvider router={router} />
     </ClerkProvider>
