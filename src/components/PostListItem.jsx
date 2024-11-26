@@ -16,6 +16,12 @@ const PostListItem = () => {
                 <Link className="text-yellow-700">Web Design</Link>
                 <span>2 days ago</span>
             </div>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum corporis 
+                accusamus maiores amet voluptatibus, assumenda sapiente sunt animi placeat, 
+                ullam delectus quibusdam error nihil fugit laboriosam sed ipsam, quas nulla!
+            </p>
+            <Link to="/test" className="underline text-yellow-700">Read More</Link>
         </div>
     </div>
   )
