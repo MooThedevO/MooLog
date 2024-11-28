@@ -1,7 +1,10 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
 
-import './index.css'
+import './index.css';
+
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import {
   createBrowserRouter,
@@ -18,12 +21,12 @@ import MainLayout from './layouts/MainLayout.jsx';
 import {
   QueryClient,
   QueryClientProvider,
-} from 'react-query'
+} from 'react-query';
 
-const queryClient = new QueryClient()
+const queryClient = new QueryClient();
 
-import { ClerkProvider } from '@clerk/clerk-react'
-import { dark } from '@clerk/themes'
+import { ClerkProvider } from '@clerk/clerk-react';
+import { dark } from '@clerk/themes';
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
 if (!PUBLISHABLE_KEY) {
@@ -76,6 +79,7 @@ createRoot(document.getElementById('root')).render(
     >
       <QueryClientProvider client={queryClient}>
         <RouterProvider router={router} />
+        <ToastContainer position="bottom-right"/>
       </QueryClientProvider>
     </ClerkProvider>
   </StrictMode>,
