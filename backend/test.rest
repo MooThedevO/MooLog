@@ -1,0 +1,22 @@
+##Get All Posts
+GET http://localhost:3000/posts/
+###
+
+##Get Post by slug
+GET http://localhost:3000/posts/test-slug
+###
+
+###Create Post
+POST http://localhost:3000/posts/
+content-type: application/json
+
+{
+    "user" : "67469be19f0c2be21ebc38b8",
+    "title" : "Test title 2",
+    "slug" : "test-slug-2",
+    "content" : "More test content"
+}
+###
+
+###Delete Post
+DELETE http://localhost:3000/posts/67469f58ed0b867e9a76cc01
