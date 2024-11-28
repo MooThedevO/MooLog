@@ -15,6 +15,13 @@ import RegisterPage from './routes/RegisterPage.jsx';
 import SinglePostPage from './routes/SinglePostPage.jsx';
 import MainLayout from './layouts/MainLayout.jsx';
 
+import {
+  QueryClient,
+  QueryClientProvider,
+} from 'react-query'
+
+const queryClient = new QueryClient()
+
 import { ClerkProvider } from '@clerk/clerk-react'
 import { dark } from '@clerk/themes'
 
@@ -67,7 +74,9 @@ createRoot(document.getElementById('root')).render(
         }
       }} 
     >
-      <RouterProvider router={router} />
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router} />
+      </QueryClientProvider>
     </ClerkProvider>
   </StrictMode>,
 )
